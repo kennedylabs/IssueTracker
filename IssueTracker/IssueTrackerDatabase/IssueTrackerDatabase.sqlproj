@@ -80,9 +80,9 @@
     <Build Include="ForeignKeys\FK_Issue_AssignedToUser.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="IssueTrackerLocalDB.publish.xml" />
+    <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script.PostDeployment.sql" />
+    <None Include="IssueTrackerLocalDB.publish.xml" />
   </ItemGroup>
 </Project>
