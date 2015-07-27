@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DacApplicationName>IssueTracker</DacApplicationName>
+    <GenerateCreateScript>False</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -61,7 +63,6 @@
     <Folder Include="ForeignKeys" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Users.sql" />
     <Build Include="Tables\Comment.sql" />
     <Build Include="Tables\Issue.sql" />
     <Build Include="Tables\IssuePriority.sql" />
@@ -77,5 +78,11 @@
     <Build Include="ForeignKeys\FK_Issue_IssueType.sql" />
     <Build Include="ForeignKeys\FK_Issue_CreatedByUser.sql" />
     <Build Include="ForeignKeys\FK_Issue_AssignedToUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IssueTrackerLocalDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

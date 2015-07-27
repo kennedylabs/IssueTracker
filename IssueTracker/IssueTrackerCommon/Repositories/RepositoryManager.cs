@@ -17,21 +17,7 @@ namespace IssueTrackerCommon.Repositories
             {
                 _context.SaveChanges();
             }
-            catch (System.Data.Entity.Validation.DbEntityValidationException e)
-            {
-#if DEBUG
-                System.Diagnostics.Debug.WriteLine("DbEntityValidationException");
-
-                foreach (var error in e.EntityValidationErrors)
-                {
-                    foreach (var validationError in error.ValidationErrors)
-                    {
-                        System.Diagnostics.Debug.WriteLine(validationError.PropertyName + ": " +
-                            validationError.ErrorMessage);
-                    }
-                }
-#endif
-                throw e;
+            catch {
             }
         }
 

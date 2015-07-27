@@ -6,6 +6,6 @@ namespace IssueTrackerCommon.Services
     {
         Unexpected,
         NotFound,
-        BadData
+        BadRequest
     }
 }

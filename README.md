@@ -1,5 +1,5 @@
-#Bluebeam Software, Inc.
-#Web Developer Technical Exercise 
+###Bluebeam Software, Inc.
+###Web Developer Technical Exercise
 
 **Description:**
 
@@ -26,21 +26,22 @@ SQL Server Express for development.
 * The user wants the ability to edit an existing issue and add comments and change it metadata,
   priority, assigned to and status
 * The user wants the ability to filter the view by Issue Status
-* The user wants the ability to sort by any field that is displayed in the view. 
+* The user wants the ability to sort by any field that is displayed in the view.
 * The view needs to display the following fields:
-  * Id,
+  * Id
   * Name
   * Summary
   * Status
   * Priority
   * Estimate
   * ModifiedOn
-  * AssignedTo 
+  * AssignedTo
 * The user wants the ability to create a new issue
 * The user wants the ability to add (create) new comments to the issue
-* The user wants the ability to edit an exiting comment 
+* The user wants the ability to edit an exiting comment
 
 **Deliverables**
 
 E-mail a .zip file containing the visual studio solution including all related files to me
-([laura.marks@bluebeam.com](laura.marks@bluebeam.com)).  You can also provide this via Dropbox or other means if you choose.
+([laura.marks@bluebeam.com](mailto:laura.marks@bluebeam.com)). You can also provide this via Dropbox or
+other means if you choose.

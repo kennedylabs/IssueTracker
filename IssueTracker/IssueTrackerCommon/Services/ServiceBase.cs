@@ -1,4 +1,5 @@
-﻿using IssueTrackerCommon.Repositories;
+﻿using IssueTrackerCommon.Mapping;
+using IssueTrackerCommon.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace IssueTrackerCommon.Services
 {
     public abstract class ServiceBase : IService
     {
+        public IMapperManager MapperManager { get; set; }
         public IRepositoryManager RepositoryManager { get; set; }
         public IServiceFactory ServiceFactory { get; set; }
 
@@ -19,6 +21,16 @@ namespace IssueTrackerCommon.Services
         protected T Service<T>() where T : IService
         {
             return ServiceFactory.CreateService<T>();
+        }
+
+        protected T Map<T>(object source) where T : new()
+        {
+            return MapperManager.Map<T>(source);
+        }
+
+        protected void Map(object source, object target)
+        {
+            MapperManager.Map(source, target);
         }
 
         protected void SaveChanges()
@@ -103,7 +115,7 @@ namespace IssueTrackerCommon.Services
             string message = null, Exception innerException = null)
         {
             if (shouldThrow)
-                throw new ServiceException(ServiceExceptionType.BadData, message, innerException);
+                throw new ServiceException(ServiceExceptionType.BadRequest, message, innerException);
         }
 
         protected void ThrowNotFoundIfNull<T>(T entity)
